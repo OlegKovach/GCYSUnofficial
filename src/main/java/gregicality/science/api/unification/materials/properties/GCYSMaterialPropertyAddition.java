@@ -32,14 +32,13 @@ public class GCYSMaterialPropertyAddition {
         Rhenium.setProperty(PropertyKey.INGOT, new IngotProperty());
 
         // Blast
-        Germanium.setProperty(PropertyKey.BLAST, new BlastProperty(1211, BlastProperty.GasTier.HIGH, GTValues.VA[GTValues.EV], 1200));
+        Germanium.setProperty(PropertyKey.BLAST, new BlastProperty(1211, BlastProperty.GasTier.HIGHEST));
 
         // Fluids
         Bromine.setProperty(PropertyKey.FLUID, new FluidProperty());
         Bromine.setMaterialIconSet(MaterialIconSet.FLUID);
         Germanium.setProperty(PropertyKey.FLUID, new FluidProperty());
         FluidProperty prop = new FluidProperty();
-        prop.setFluidTemperature(332);
         SodiumBisulfate.setProperty(PropertyKey.FLUID, prop);
 
         // Ore Byproducts

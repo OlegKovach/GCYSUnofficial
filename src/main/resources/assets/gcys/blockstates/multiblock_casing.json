@@ -51,6 +51,12 @@
         "textures": {
           "all": "gregtech:blocks/casings/solid/extreme_strength_tritanium_casing"
         }
+      },
+      "vaccum_thermal_proof_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gregtech:blocks/casings/solid/vacuum_thermal_proof_casing"
+        }
       }
     }
   }

@@ -1,12 +1,7 @@
 package gregicality.science.common.block;
 
 import gregicality.science.client.render.pipe.PressurePipeRenderer;
-import gregicality.science.common.block.blocks.BlockCrucible;
-import gregicality.science.common.block.blocks.BlockGCYSMultiblockCasing;
-import gregicality.science.common.block.blocks.BlockGCYSMultiblockCasingActive;
-import gregicality.science.common.block.blocks.BlockTransparentCasing;
-import gregicality.science.common.pipelike.pressure.BlockPressurePipe;
-import gregicality.science.common.pipelike.pressure.PressurePipeType;
+import gregicality.science.common.block.blocks.*;
 import gregtech.client.model.SimpleStateMapper;
 import net.minecraft.block.Block;
 import net.minecraft.block.properties.IProperty;
@@ -26,11 +21,13 @@ import java.util.stream.Collectors;
 
 public class GCYSMetaBlocks {
 
-    public static final BlockPressurePipe[] PRESSURE_PIPES = new BlockPressurePipe[PressurePipeType.values().length];
+
     public static BlockCrucible CRUCIBLE;
     public static BlockGCYSMultiblockCasing MULTIBLOCK_CASING;
     public static BlockGCYSMultiblockCasingActive MULTIBLOCK_CASING_ACTIVE;
     public static BlockTransparentCasing TRANSPARENT_CASING;
+
+    public static BlockArcElectrode ELECTRODE;
 
     private GCYSMetaBlocks() {
 
@@ -45,11 +42,10 @@ public class GCYSMetaBlocks {
         MULTIBLOCK_CASING_ACTIVE.setRegistryName("multiblock_casing_active");
         TRANSPARENT_CASING = new BlockTransparentCasing();
         TRANSPARENT_CASING.setRegistryName("transparent_casing");
+        ELECTRODE = new BlockArcElectrode();
+        ELECTRODE.setRegistryName("arc_electrode");
 
-        for (PressurePipeType type : PressurePipeType.values()) {
-            PRESSURE_PIPES[type.ordinal()] = new BlockPressurePipe(type);
-            PRESSURE_PIPES[type.ordinal()].setRegistryName(String.format("pressure_pipe_%s", type.name));
-        }
+
     }
 
     @SideOnly(Side.CLIENT)
@@ -58,12 +54,9 @@ public class GCYSMetaBlocks {
         registerItemModel(MULTIBLOCK_CASING);
         registerItemModel(MULTIBLOCK_CASING_ACTIVE);
         registerItemModel(TRANSPARENT_CASING);
+        registerItemModel(ELECTRODE);
 
-        IStateMapper normalStateMapper = new SimpleStateMapper(PressurePipeRenderer.INSTANCE.getModelLocation());
-        for (BlockPressurePipe pipe : PRESSURE_PIPES) {
-            ModelLoader.setCustomMeshDefinition(Item.getItemFromBlock(pipe), stack -> PressurePipeRenderer.INSTANCE.getModelLocation());
-            ModelLoader.setCustomStateMapper(pipe, normalStateMapper);
-        }
+
     }
 
     @SideOnly(Side.CLIENT)

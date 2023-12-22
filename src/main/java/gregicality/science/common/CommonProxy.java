@@ -3,9 +3,6 @@ package gregicality.science.common;
 import gregicality.science.GregicalityScience;
 import gregicality.science.common.block.GCYSMetaBlocks;
 import gregicality.science.common.items.GCYSMetaItems;
-import gregicality.science.common.pipelike.pressure.BlockPressurePipe;
-import gregicality.science.common.pipelike.pressure.ItemBlockPressurePipe;
-import gregicality.science.common.pipelike.pressure.tile.TileEntityPressurePipe;
 import gregicality.science.loaders.recipe.GCYSMaterialInfoLoader;
 import gregicality.science.loaders.recipe.GCYSRecipeLoader;
 import gregicality.science.loaders.recipe.component.GCYSCraftingComponent;
@@ -37,8 +34,7 @@ import java.util.function.Function;
 public class CommonProxy {
 
     public void preLoad() {
-        GameRegistry.registerTileEntity(TileEntityPressurePipe.class, new ResourceLocation(GregicalityScience.MODID, "pressure_pipe"));
-    }
+        }
 
     @SubscribeEvent
     public static void syncConfigValues(@Nonnull ConfigChangedEvent.OnConfigChangedEvent event) {
@@ -55,7 +51,7 @@ public class CommonProxy {
         registry.register(GCYSMetaBlocks.MULTIBLOCK_CASING_ACTIVE);
         registry.register(GCYSMetaBlocks.TRANSPARENT_CASING);
 
-        for (BlockPressurePipe pipe : GCYSMetaBlocks.PRESSURE_PIPES) registry.register(pipe);
+
     }
 
     @SubscribeEvent
@@ -68,8 +64,7 @@ public class CommonProxy {
         registry.register(createItemBlock(GCYSMetaBlocks.MULTIBLOCK_CASING_ACTIVE, VariantItemBlock::new));
         registry.register(createItemBlock(GCYSMetaBlocks.TRANSPARENT_CASING, VariantItemBlock::new));
 
-        for (BlockPressurePipe pipe : GCYSMetaBlocks.PRESSURE_PIPES) registry.register(createItemBlock(pipe, ItemBlockPressurePipe::new));
-    }
+        }
 
     @Nonnull
     private static <T extends Block> ItemBlock createItemBlock(@Nonnull T block, @Nonnull Function<T, ItemBlock> producer) {

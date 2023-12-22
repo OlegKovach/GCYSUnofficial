@@ -23,6 +23,10 @@ public class BlockGCYSMultiblockCasing extends VariantBlock<BlockGCYSMultiblockC
         SUBSTRATE("substrate"),
         ADVANCED_SUBSTRATE("advanced_substrate"),
         DRILL_HEAD("drill_head"),
+
+        GRAPHITE_ELECTRODE("graphite_electrode"),
+
+        VACUUM_THERMAL_PROOF_CASING("vaccum_thermal_proof_casing"),
         SUPERHEAVY_QUANTUM_CASING("superheavy_quantum_casing"),
 
         EXTREME_STRENGTH_TRITANIUM_CASING("extreme_strength_tritanium_casing"),

@@ -52,6 +52,7 @@ public class GCYSRecipeLoader {
         SimpleMaterials.init();
         PedotChain.init();
         BoulesRecipes.init();
+        PTFEChain.init();
     }
 
     private static void initOreProcessing() {

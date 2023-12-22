@@ -1,7 +1,8 @@
 package gregicality.science.api.unification.materials;
 
 import gregtech.api.GTValues;
-import gregtech.api.fluids.fluidType.FluidTypes;
+import gregtech.api.fluids.FluidBuilder;
+import gregtech.api.fluids.attribute.FluidAttributes;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialIconSet;
 import gregtech.api.unification.material.properties.BlastProperty;
@@ -159,11 +160,11 @@ public class GCYSFirstDegreeMaterials {
                 .build();
 
         PotassiumHydroxide = new Material.Builder(3520, gregtechId("potassium_hydroxide"))
-                .dust().fluid()
+                .dust()
+                .liquid(new FluidBuilder().temperature(633))
                 .color(0xFA9849)
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Potassium, 1, Oxygen, 1, Hydrogen, 1)
-                .fluidTemp(633)
                 .build();
 
         CarbonTetrachloride = new Material.Builder(3521, gregtechId("carbon_tetrachloride"))
@@ -390,7 +391,7 @@ public class GCYSFirstDegreeMaterials {
                 .build();
 
         BoronTrifluoride = new Material.Builder(3552, gregtechId("boron_trifluoride"))
-                .fluid(FluidTypes.GAS)
+                .gas(new FluidBuilder())
                 .color(0xFAF191)
                 .components(Boron, 1, Fluorine, 3)
                 .build();
@@ -404,7 +405,7 @@ public class GCYSFirstDegreeMaterials {
                 .build();
 
         Diborane = new Material.Builder(3554, gregtechId("diborane"))
-                .fluid(FluidTypes.GAS)
+                .gas(new FluidBuilder())
                 .color(0x3F3131)
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Boron, 2, Hydrogen, 6)
@@ -418,7 +419,7 @@ public class GCYSFirstDegreeMaterials {
                 .build();
 
         BoronTrichloride = new Material.Builder(3556, gregtechId("boron_trichloride"))
-                .fluid(FluidTypes.GAS)
+                .gas(new FluidBuilder())
                 .color(0x033F1B)
                 .components(Boron, 1, Chlorine, 3)
                 .build();
@@ -483,7 +484,7 @@ public class GCYSFirstDegreeMaterials {
                 .build();
 
         HydrobromicAcid = new Material.Builder(3564, gregtechId("hydrobromic_acid"))
-                .fluid(FluidTypes.ACID)
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
                 .color(0x8D1212)
                 .components(Hydrogen, 1, Bromine, 1)
                 .build();
@@ -582,7 +583,7 @@ public class GCYSFirstDegreeMaterials {
                 .iconSet(MaterialIconSet.SHINY)
                 .flags(GENERATE_PLATE, NO_SMASHING, NO_WORKING, DECOMPOSITION_BY_CENTRIFUGING)
                 .components(Germanium, 2, Antimony, 2, Tellurium, 5)
-                .blastTemp(873, BlastProperty.GasTier.MID)
+                .blast(873, BlastProperty.GasTier.LOW)
                 .build();
 
         ZBLANGlass = new Material.Builder(3578, gregtechId("zblan_glass"))
@@ -595,7 +596,7 @@ public class GCYSFirstDegreeMaterials {
                 .setFormula("(ZrF4)5(BaF2)2(LaF3)(AlF3)(NaF)2", true);
 
         HeliumNeon = new Material.Builder(3579, gregtechId("helium_neon"))
-                .fluid(FluidTypes.GAS)
+                .gas(new FluidBuilder())
                 .color(0xFF0080)
                 .flags(DECOMPOSITION_BY_CENTRIFUGING)
                 .components(Helium, 9, Neon, 1)
@@ -625,7 +626,8 @@ public class GCYSFirstDegreeMaterials {
                 .build();
 
         GalliumTrioxide = new Material.Builder(3583, gregtechId("gallium_trioxide"))
-                .dust().fluid().fluidTemp(2170)
+                .dust()
+                .liquid(new FluidBuilder().temperature(2170))
                 .color(0xE4CDFF)
                 .iconSet(MaterialIconSet.METALLIC)
                 .components(Gallium, 1, Oxygen, 3)
@@ -670,7 +672,7 @@ public class GCYSFirstDegreeMaterials {
                 .build();
 
         Phosphine = new Material.Builder(3589, gregtechId("phosphine"))
-                .fluid(FluidTypes.GAS)
+                .gas(new FluidBuilder())
                 .color(0xACB330)
                 .flags(DECOMPOSITION_BY_ELECTROLYZING, FLAMMABLE)
                 .components(Phosphorus, 1, Hydrogen, 3)
@@ -733,7 +735,7 @@ public class GCYSFirstDegreeMaterials {
                 .iconSet(MaterialIconSet.MAGNETIC)
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD)
                 .components(Neptunium, 1, Aluminium, 3)
-                .blastTemp(1568, BlastProperty.GasTier.HIGHER, GTValues.VA[GTValues.ZPM])
+                .blast(1568, BlastProperty.GasTier.HIGHEST)
                 .build()
                 .setFormula("NpAl3", true);
 
@@ -762,7 +764,7 @@ public class GCYSFirstDegreeMaterials {
                 .flags(GENERATE_FINE_WIRE)
                 .components(Mercury, 2, Cadmium, 1, Tellurium, 2)
                 .cableProperties(GTValues.V[GTValues.UHV], 6, 8)
-                .blastTemp(2170, BlastProperty.GasTier.HIGHER, GTValues.VA[GTValues.UHV])
+                .blast(2170, BlastProperty.GasTier.HIGHER)
                 .build();
 
         AluminiumSelenide = new Material.Builder(3601, gregtechId("aluminium_selenide"))
@@ -772,7 +774,7 @@ public class GCYSFirstDegreeMaterials {
                 .build();
 
         HydrogenSelenide = new Material.Builder(3602, gregtechId("hydrogen_selenide"))
-                .fluid(FluidTypes.GAS)
+                .gas(new FluidBuilder())
                 .color(0x42f554)
                 .components(Hydrogen, 2, Selenium, 1)
                 .build();
@@ -918,7 +920,7 @@ public class GCYSFirstDegreeMaterials {
                 .iconSet(MaterialIconSet.METALLIC)
                 .flags(GENERATE_FINE_WIRE)
                 .components(Silicon, 1, Carbon, 1)
-                .blastTemp(2500, BlastProperty.GasTier.HIGH, GTValues.VA[GTValues.UV])
+                .blast(2500, BlastProperty.GasTier.HIGHEST)
                 .cableProperties(GTValues.V[GTValues.UHV], 6, 8)
                 .build();
 
@@ -928,7 +930,7 @@ public class GCYSFirstDegreeMaterials {
                 .iconSet(MaterialIconSet.METALLIC)
                 .flags(GENERATE_ROD, GENERATE_LONG_ROD)
                 .components(Chrome, 1, Germanium, 1, Tellurium, 3)
-                .blastTemp(2900, BlastProperty.GasTier.HIGHER)
+                .blast(2900, BlastProperty.GasTier.HIGHEST)
                 .build();
 
         Kovar = new Material.Builder(3623, gregtechId("kovar"))
@@ -993,6 +995,11 @@ public class GCYSFirstDegreeMaterials {
                 .fluid()
                 .color(0xe04800)
                 .components(Hydrogen, 6, Chlorine, 6, Oxygen, 2, Platinum, 1)
+                .build();
+        AntimonyPentafluoride = new Material.Builder(3633, gregtechId("antimonypentafluoride"))
+                .liquid(new FluidBuilder())
+                .color(0xfcfdfb)
+                .components(Antimony, 1, Fluorine, 5)
                 .build();
     }
 }

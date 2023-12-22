@@ -104,8 +104,8 @@ public class TemperaturePressureRecipeBuilder extends RecipeBuilder<TemperatureP
     public String toString() {
         return new ToStringBuilder(this)
                 .appendSuper(super.toString())
-                .append(NoCoilTemperatureProperty.getInstance().getKey(), GTUtility.formatNumbers(getTemperature()))
-                .append(PressureProperty.getInstance().getKey(), GTUtility.formatNumbers(getPressure()))
+                .append(NoCoilTemperatureProperty.getInstance().getKey(), getTemperature())
+                .append(PressureProperty.getInstance().getKey(), getPressure())
                 .toString();
     }
 }

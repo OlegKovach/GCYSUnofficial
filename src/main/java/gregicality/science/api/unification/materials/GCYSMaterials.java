@@ -59,6 +59,8 @@ public class GCYSMaterials {
     public static Material ChlorosulfuricAcid;
     public static Material CubicZirconia;
     public static Material MolybdenumTrioxide;
+
+    public static Material AntimonyPentafluoride;
     public static Material LeadChloride;
     public static Material SodiumTellurite;
     public static Material TelluriumDioxide;
@@ -244,6 +246,8 @@ public class GCYSMaterials {
     public static Material PolystyreneSulfonate;
     public static Material PedotPSS;
     public static Material PedotTMA;
+
+    public static Material Difluorochloromethane;
 
 
     // Unknown Composition Materials

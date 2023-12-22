@@ -78,7 +78,7 @@ public class PressureRecipeBuilder extends RecipeBuilder<PressureRecipeBuilder> 
     public String toString() {
         return new ToStringBuilder(this)
                 .appendSuper(super.toString())
-                .append(PressureProperty.getInstance().getKey(), GTUtility.formatNumbers(getPressure()))
+                .append(PressureProperty.getInstance().getKey(), getPressure())
                 .toString();
     }
 }

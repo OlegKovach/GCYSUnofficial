@@ -50,6 +50,10 @@ public class GCYSMetaTileEntities {
 
     public static MetaTileEntityCZPuller CZ_PULLER;
 
+    public static MetaTileEntityPyroliseReactor PYROLISE_REACTOR;
+
+    public static MetaTileEntityVacuumArcFurnace VACUUMM_ARC_FURNACE;
+
     public static void init() {
         // GCYM Machines: ID 2000-2099
 
@@ -92,6 +96,8 @@ public class GCYSMetaTileEntities {
         HIGH_POWER_TURBOMOLECULAR_PUMP = registerMetaTileEntity(3914, new MetaTileEntityTurbomolecularPump(gcysId("turbomolecular_pump.high_power"), GTValues.LuV, 1E-7, 50_000.0));
         ION_IMPLANTATOR = registerMetaTileEntity(3915, new MetaTileEntityIonImplanter(gcysId("ion_implantator")));
         CZ_PULLER = registerMetaTileEntity(3916, new MetaTileEntityCZPuller(gcysId("cz_puller")));
+        PYROLISE_REACTOR = registerMetaTileEntity(3917, new MetaTileEntityPyroliseReactor(gcysId("pyrolise_reactor")));
+        VACUUMM_ARC_FURNACE = registerMetaTileEntity(3918, new MetaTileEntityVacuumArcFurnace(gcysId("vacuum_arc_furnace")));
     }
 
     @Nonnull

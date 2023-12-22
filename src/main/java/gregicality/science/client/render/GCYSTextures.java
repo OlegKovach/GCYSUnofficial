@@ -2,6 +2,7 @@ package gregicality.science.client.render;
 
 import gregicality.science.GregicalityScience;
 import gregtech.client.renderer.texture.cube.OrientedOverlayRenderer;
+import gregtech.client.renderer.texture.cube.SimpleOverlayRenderer;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.util.ResourceLocation;
@@ -37,6 +38,10 @@ public class GCYSTextures {
 
     public static TextureAtlasSprite PRESSURE_PIPE_SIDE;
     public static TextureAtlasSprite PRESSURE_PIPE_OPEN;
+
+    // Casing Overlays
+
+    public static final SimpleOverlayRenderer VACCUM_THERMO_PROFF_CASING = new SimpleOverlayRenderer("casings/solid/vacuum_thermal_proof_casing");
 
     @SideOnly(Side.CLIENT)
     public static void register(TextureMap textureMap) {

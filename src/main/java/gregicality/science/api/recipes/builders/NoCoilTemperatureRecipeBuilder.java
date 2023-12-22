@@ -75,7 +75,7 @@ public class NoCoilTemperatureRecipeBuilder extends RecipeBuilder<NoCoilTemperat
     public String toString() {
         return new ToStringBuilder(this)
                 .appendSuper(super.toString())
-                .append(NoCoilTemperatureProperty.getInstance().getKey(), GTUtility.formatNumbers(getTemperature()))
+                .append(NoCoilTemperatureProperty.getInstance().getKey(), getTemperature())
                 .toString();
     }
 }
